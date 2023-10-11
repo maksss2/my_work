@@ -11,13 +11,62 @@ using System.Windows.Forms;
 namespace test
 {
     public partial class Form1 : Form
+
     {
+       
         public Form1()
         {
             InitializeComponent();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void showButton_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Load(openFileDialog1.FileName);
+            }
+
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
+        }
+
+        private void backgroundButton_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+               this.BackColor = colorDialog1.Color;
+           
+    
+
+            Console.WriteLine(colorDialog1);
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+                pictureBox1.SizeMode = PictureBoxSizeMode.Normal;
+            else
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
         }
