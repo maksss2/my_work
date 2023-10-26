@@ -46,7 +46,7 @@ namespace test
             {
                 if (clickedLabel.ForeColor == Color.Black)
                     return;
-                clickedLabel.ForeColor == Color.Black;
+                //clickedLabel.ForeColor == Color.Black;
             }
 
         }
