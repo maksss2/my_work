@@ -12,6 +12,8 @@ namespace test
 {
     public partial class Form2 : Form
     {
+        private bool isTimerRunning = false;
+
         public Form2()
         {
             InitializeComponent();
@@ -22,11 +24,27 @@ namespace test
             int tmp = Int32.Parse(txtSeconds.Text);
             tmp += 1;
             txtSeconds.Text = tmp.ToString();
+
+            int tmt = Int32.Parse(txtMinutes.Text);
+            tmp += 60;
+            txtMinutes.Text = tmt.ToString();
+
+
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            tmrSecundomer.Start();
+            if (isTimerRunning)
+            {
+                tmrSecundomer.Stop();
+                isTimerRunning = false;
+            }
+            else
+            {
+                tmrSecundomer.Start();
+                isTimerRunning = true;
+            }
         }
     }
+
 }

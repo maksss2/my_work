@@ -81,6 +81,7 @@
             // 
             // tmrSecundomer
             // 
+            this.tmrSecundomer.Interval = 1000;
             this.tmrSecundomer.Tick += new System.EventHandler(this.tmrSecundomer_Tick);
             // 
             // Form2
