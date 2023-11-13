@@ -57,7 +57,13 @@ namespace test
 
         private void lstResult_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 newForm = new Form2();
+            newForm.Show();
         }
     }
 }

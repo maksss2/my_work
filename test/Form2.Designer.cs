@@ -77,6 +77,11 @@
             this.btnStart.TabIndex = 4;
             this.btnStart.Text = "GO!GO!GO!";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // tmrSecundomer
+            // 
+            this.tmrSecundomer.Tick += new System.EventHandler(this.tmrSecundomer_Tick);
             // 
             // Form2
             // 
