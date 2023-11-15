@@ -186,7 +186,7 @@
             this.Controls.Add(this.txtX1);
             this.Controls.Add(this.btnCalc);
             this.Name = "Lab5";
-            this.Text = "Form1";
+            this.Text = "считаем";
             this.ResumeLayout(false);
             this.PerformLayout();
 

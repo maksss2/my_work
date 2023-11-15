@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace test
 {
-    public partial class Form2 : Form
+    public partial class Время : Form
     {
         private bool isTimerRunning = false;
 
-        public Form2()
+        public Время()
         {
             InitializeComponent();
         }
@@ -36,14 +36,30 @@ namespace test
         {
             if (isTimerRunning)
             {
+                timer2.Stop();
+                timer1.Stop();
                 tmrSecundomer.Stop();
                 isTimerRunning = false;
             }
             else
             {
+                timer2.Start();
+                timer1.Start();
                 tmrSecundomer.Start();
                 isTimerRunning = true;
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int tmt = Int32.Parse(txtMinutes.Text);
+            tmt += 1;
+            txtMinutes.Text = tmt.ToString();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            label3.Text = "Текущее время: " + DateTime.Now.ToString("HH:mm:ss");
         }
     }
 

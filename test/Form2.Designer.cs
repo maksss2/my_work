@@ -1,6 +1,6 @@
 ﻿namespace test
 {
-    partial class Form2
+    partial class Время
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrSecundomer = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // txtMinutes
@@ -43,6 +46,7 @@
             this.txtMinutes.Name = "txtMinutes";
             this.txtMinutes.Size = new System.Drawing.Size(57, 20);
             this.txtMinutes.TabIndex = 0;
+            this.txtMinutes.Text = "0";
             // 
             // txtSeconds
             // 
@@ -50,6 +54,7 @@
             this.txtSeconds.Name = "txtSeconds";
             this.txtSeconds.Size = new System.Drawing.Size(57, 20);
             this.txtSeconds.TabIndex = 1;
+            this.txtSeconds.Text = "0";
             // 
             // label1
             // 
@@ -84,18 +89,35 @@
             this.tmrSecundomer.Interval = 1000;
             this.tmrSecundomer.Tick += new System.EventHandler(this.tmrSecundomer_Tick);
             // 
-            // Form2
+            // timer1
+            // 
+            this.timer1.Interval = 60000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(18, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 23);
+            this.label3.TabIndex = 5;
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // Время
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(250, 110);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSeconds);
             this.Controls.Add(this.txtMinutes);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "Время";
+            this.Text = "Время";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,5 +131,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Timer tmrSecundomer;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer timer2;
     }
 }
