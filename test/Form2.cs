@@ -23,19 +23,13 @@ namespace test
 
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            lst.Items.Add(txtFileName.Text);
-            txtFileName.Clear();
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
+       private void btnSave_Click(object sender, EventArgs e)
         {
             {
-                // Создание  окна для сохранения файла
+                // Создание диалогового окна для сохранения файла
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*"; // Установка фильтра
-                // Отображение диалогового окна 
+                // Отображение диалогового окна и ожидание выбора файла пользователем
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string fileName = saveFileDialog.FileName; // Получить имя выбранного файла
@@ -57,21 +51,38 @@ namespace test
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
+            string fileName = txt.Text.Trim(); // Trim to remove leading and trailing whitespaces
+
+            if (!string.IsNullOrEmpty(fileName))
             {
-                string fileName = txtFileName.Text; // Получение имени файла из текстового поля
-                lstFromfile.Items.Clear(); // Очистка элементов в другом ListBox
-                
+                lstFromfile.Items.Clear(); // Clear items in the other ListBox
+
+                // Use FileStream and BinaryReader to read from the file
                 using (FileStream fs = new FileStream(fileName, FileMode.Open))
                 using (BinaryReader br = new BinaryReader(fs))
                 {
-                    while (br.PeekChar() != -1) 
+                    while (br.PeekChar() != -1) // While there are characters in the file
                     {
-                        lstFromfile.Items.Add(br.ReadString()); // Добавление каждой строки из файла в ListBox
+                        lstFromfile.Items.Add(br.ReadString()); // Add each line from the file to ListBox
                     }
-                    br.Close();
-                    fs.Close();
                 }
             }
+            else
+            {
+                MessageBox.Show("Please enter a valid file name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            lst.Items.Add(txt.Text); // Добавление текста из TextBox в ListBox
+            txt.Clear(); // Очистка TextBox после добавления
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

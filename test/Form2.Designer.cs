@@ -30,12 +30,13 @@
         {
             this.lst = new System.Windows.Forms.ListBox();
             this.lstFromfile = new System.Windows.Forms.ListBox();
-            this.txtFileName = new System.Windows.Forms.TextBox();
+            this.txt = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.fileName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lst
@@ -54,12 +55,12 @@
             this.lstFromfile.Size = new System.Drawing.Size(245, 95);
             this.lstFromfile.TabIndex = 1;
             // 
-            // txtFileName
+            // txt
             // 
-            this.txtFileName.Location = new System.Drawing.Point(22, 41);
-            this.txtFileName.Name = "txtFileName";
-            this.txtFileName.Size = new System.Drawing.Size(100, 20);
-            this.txtFileName.TabIndex = 2;
+            this.txt.Location = new System.Drawing.Point(22, 364);
+            this.txt.Name = "txt";
+            this.txt.Size = new System.Drawing.Size(208, 20);
+            this.txt.TabIndex = 2;
             // 
             // btnAdd
             // 
@@ -104,16 +105,24 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // fileName
+            // 
+            this.fileName.Location = new System.Drawing.Point(22, 50);
+            this.fileName.Name = "fileName";
+            this.fileName.Size = new System.Drawing.Size(316, 20);
+            this.fileName.TabIndex = 7;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fileName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtFileName);
+            this.Controls.Add(this.txt);
             this.Controls.Add(this.lstFromfile);
             this.Controls.Add(this.lst);
             this.Name = "Form2";
@@ -128,11 +137,12 @@
 
         private System.Windows.Forms.ListBox lst;
         private System.Windows.Forms.ListBox lstFromfile;
-        private System.Windows.Forms.TextBox txtFileName;
+        private System.Windows.Forms.TextBox txt;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox fileName;
     }
 }
