@@ -51,25 +51,25 @@ namespace test
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            string fileName = txt.Text.Trim(); // Trim to remove leading and trailing whitespaces
+            string fileName = txt.Text.Trim(); 
 
             if (!string.IsNullOrEmpty(fileName))
             {
-                lstFromfile.Items.Clear(); // Clear items in the other ListBox
+                lstFromfile.Items.Clear(); 
 
-                // Use FileStream and BinaryReader to read from the file
+               
                 using (FileStream fs = new FileStream(fileName, FileMode.Open))
                 using (BinaryReader br = new BinaryReader(fs))
                 {
-                    while (br.PeekChar() != -1) // While there are characters in the file
+                    while (br.PeekChar() != -1) 
                     {
-                        lstFromfile.Items.Add(br.ReadString()); // Add each line from the file to ListBox
+                        lstFromfile.Items.Add(br.ReadString()); 
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Please enter a valid file name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("путь не вереn.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
