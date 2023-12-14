@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,22 @@ namespace test
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+        Point[] points = new Point[50];
+        Pen pen = new Pen(Color.Coral, 2);
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics; //объект для рисования
+            g.DrawLines(pen, points);
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
