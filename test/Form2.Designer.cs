@@ -34,15 +34,13 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.fileName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lst
             // 
             this.lst.FormattingEnabled = true;
-            this.lst.Location = new System.Drawing.Point(22, 212);
+            this.lst.Location = new System.Drawing.Point(11, 12);
             this.lst.Name = "lst";
             this.lst.Size = new System.Drawing.Size(208, 95);
             this.lst.TabIndex = 0;
@@ -50,21 +48,21 @@
             // lstFromfile
             // 
             this.lstFromfile.FormattingEnabled = true;
-            this.lstFromfile.Location = new System.Drawing.Point(264, 212);
+            this.lstFromfile.Location = new System.Drawing.Point(253, 12);
             this.lstFromfile.Name = "lstFromfile";
             this.lstFromfile.Size = new System.Drawing.Size(245, 95);
             this.lstFromfile.TabIndex = 1;
             // 
             // txt
             // 
-            this.txt.Location = new System.Drawing.Point(22, 364);
+            this.txt.Location = new System.Drawing.Point(11, 164);
             this.txt.Name = "txt";
             this.txt.Size = new System.Drawing.Size(208, 20);
             this.txt.TabIndex = 2;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(22, 401);
+            this.btnAdd.Location = new System.Drawing.Point(11, 201);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(208, 23);
             this.btnAdd.TabIndex = 3;
@@ -74,7 +72,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(22, 322);
+            this.btnSave.Location = new System.Drawing.Point(11, 122);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(208, 23);
             this.btnSave.TabIndex = 4;
@@ -84,7 +82,7 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(264, 320);
+            this.btnOpen.Location = new System.Drawing.Point(253, 120);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(245, 23);
             this.btnOpen.TabIndex = 5;
@@ -92,33 +90,15 @@
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Путь к файлу";
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // fileName
-            // 
-            this.fileName.Location = new System.Drawing.Point(22, 50);
-            this.fileName.Name = "fileName";
-            this.fileName.Size = new System.Drawing.Size(316, 20);
-            this.fileName.TabIndex = 7;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.fileName);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(506, 239);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
@@ -141,8 +121,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnOpen;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.TextBox fileName;
     }
 }

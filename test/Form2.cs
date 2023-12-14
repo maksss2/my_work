@@ -51,25 +51,20 @@ namespace test
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            string fileName = txt.Text.Trim(); 
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
 
-            if (!string.IsNullOrEmpty(fileName))
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                lstFromfile.Items.Clear(); 
+                string fileName = openFileDialog.FileName;
 
-               
-                using (FileStream fs = new FileStream(fileName, FileMode.Open))
-                using (BinaryReader br = new BinaryReader(fs))
+                using (StreamReader reader = new StreamReader(fileName))
                 {
-                    while (br.PeekChar() != -1) 
+                    while (!reader.EndOfStream)
                     {
-                        lstFromfile.Items.Add(br.ReadString()); 
+                        lstFromfile.Items.Add(reader.ReadLine());
                     }
                 }
-            }
-            else
-            {
-                MessageBox.Show("путь не вереn.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
