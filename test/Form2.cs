@@ -19,13 +19,13 @@ namespace pr5_1
 
         private void buttonCalc_Click(object sender, EventArgs e)
         {
-            //сичтаем с формы требуемые значени
+            //считываем значения с формы
             double Xmin = double.Parse(textBoxXminS.Text);
             double Xmax = double.Parse(textBoxXmaxS.Text);
             double Step = double.Parse(textBoxStepS.Text);
+            double b = -2;
             //количество точек графика
-            int count = (int)Math.Ceiling((Xmax - Xmin) / Step)
-                + 1;
+            int count = (int)Math.Ceiling((Xmax - Xmin) / Step) + 1;
             //массив значений X - общий для обоих графиков
             double[] X = new double[count];
             double[] y1 = new double[count];
@@ -36,16 +36,18 @@ namespace pr5_1
                 //вычисляем значение
                 X[i] = Xmin + Step * i;
                 //вычисляем значение функций в точке X
-                y1[i] = Math.Pow(10, -2) * (-1.5) * (0.75) / (X[i] + Math.Cos(Math.Sqrt(Math.Pow((-1.25), 3) * X[i])));
-                y2[i] = (Math.Pow(X[i], 2) + 2 * X[i] - 7) / Math.Sqrt(X[i]+100);
+                y1[i] = Math.Abs(X[i] - b) * Math.Pow(1 - Math.Pow(X[i], 3) + Math.Log(X[i]) - b, 1 / 2);
+                y2[i] = (Math.Pow(X[i], 2) + 2 * X[i] - 7) / Math.Sqrt(X[i] + 100);
             }
             //настраиваем оси графика
             chart2.ChartAreas[0].AxisX.Minimum = Xmin;
             chart2.ChartAreas[0].AxisX.Maximum = Xmax;
-            //определяем шаг сетки 
+            chart2.ChartAreas[0].AxisY.Minimum = Math.Min(y1.Min(), y2.Min());
+            chart2.ChartAreas[0].AxisY.Maximum = Math.Max(y1.Max(), y2.Max());
+            //определяем шаг сетки
             chart2.ChartAreas[0].AxisX.MajorGrid.Interval = Step;
 
-            //добавляем вычисление значения в графики
+            //добавляем вычисленные значения в графики
             chart2.Series[0].Points.DataBindXY(X, y1);
             chart2.Series[1].Points.DataBindXY(X, y2);
         }
