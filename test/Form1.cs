@@ -15,11 +15,17 @@ namespace test
         public Form1()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+          StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }

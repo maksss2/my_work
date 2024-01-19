@@ -34,12 +34,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Loginbtn = new System.Windows.Forms.Button();
             this.Exitbtn = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 18);
             this.label1.Name = "label1";
@@ -49,20 +48,23 @@
             // 
             // Logintxt
             // 
-            this.Logintxt.Location = new System.Drawing.Point(3, 3);
+            this.Logintxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Logintxt.Location = new System.Drawing.Point(12, 34);
             this.Logintxt.Name = "Logintxt";
-            this.Logintxt.Size = new System.Drawing.Size(94, 20);
+            this.Logintxt.Size = new System.Drawing.Size(173, 20);
             this.Logintxt.TabIndex = 1;
             // 
             // Passwordtxt
             // 
-            this.Passwordtxt.Location = new System.Drawing.Point(3, 53);
+            this.Passwordtxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Passwordtxt.Location = new System.Drawing.Point(12, 73);
             this.Passwordtxt.Name = "Passwordtxt";
-            this.Passwordtxt.Size = new System.Drawing.Size(94, 20);
+            this.Passwordtxt.Size = new System.Drawing.Size(173, 20);
             this.Passwordtxt.TabIndex = 2;
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 57);
             this.label2.Name = "label2";
@@ -73,51 +75,39 @@
             // 
             // Loginbtn
             // 
-            this.Loginbtn.Location = new System.Drawing.Point(110, 108);
+            this.Loginbtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Loginbtn.Location = new System.Drawing.Point(106, 109);
             this.Loginbtn.Name = "Loginbtn";
-            this.Loginbtn.Size = new System.Drawing.Size(75, 23);
+            this.Loginbtn.Size = new System.Drawing.Size(79, 23);
             this.Loginbtn.TabIndex = 4;
             this.Loginbtn.Text = "Login";
             this.Loginbtn.UseVisualStyleBackColor = true;
             // 
             // Exitbtn
             // 
+            this.Exitbtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Exitbtn.Location = new System.Drawing.Point(12, 109);
             this.Exitbtn.Name = "Exitbtn";
-            this.Exitbtn.Size = new System.Drawing.Size(42, 23);
+            this.Exitbtn.Size = new System.Drawing.Size(79, 23);
             this.Exitbtn.TabIndex = 5;
             this.Exitbtn.Text = "Exit";
             this.Exitbtn.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.Passwordtxt, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Logintxt, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(288, 109);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-            this.tableLayoutPanel1.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 358);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(205, 149);
+            this.Controls.Add(this.Passwordtxt);
+            this.Controls.Add(this.Logintxt);
             this.Controls.Add(this.Exitbtn);
             this.Controls.Add(this.Loginbtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(221, 184);
             this.Name = "Form1";
             this.Text = "Авторизация";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,7 +121,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Loginbtn;
         private System.Windows.Forms.Button Exitbtn;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 
